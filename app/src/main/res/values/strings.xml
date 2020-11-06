@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SchoolChampionship</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Study_enter">学习入口</string>
+    <string name="ex_enter">练习入口</string>
 </resources>
