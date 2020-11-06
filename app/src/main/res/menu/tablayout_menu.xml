@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/history_affairs"
+        android:title="@string/history_affairs" />
+    <item
+        android:id="@+id/current_affairs"
+        android:title="@string/current_affairs" />
+    <item
+        android:id="@+id/school_affairs"
+        android:title="@string/school_affairs" />
+</menu>

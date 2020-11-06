@@ -1,17 +1,16 @@
-package com.example.schoolchampionship;
+package com.example.schoolchampionship.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
-import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
+import com.example.schoolchampionship.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
-    private ViewPager select_viewPager;
-    private StudyFragment studyFragment;
+    private HistoryFragment studyFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initview() {
         bottomNavigationView = findViewById(R.id.navigation_container);
-        studyFragment = new StudyFragment();
+        studyFragment = new HistoryFragment();
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction().replace(R.id.fragment_container,studyFragment).commit();
     }

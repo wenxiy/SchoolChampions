@@ -1,4 +1,4 @@
-package com.example.schoolchampionship;
+package com.example.schoolchampionship.Adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
