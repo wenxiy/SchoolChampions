@@ -1,7 +1,7 @@
 package com.example.schoolchampionship.Bean;
 
 public class Entity {
-    private String uri;
+    private int uri;
     private String title;
     private String description;
     private String time;
@@ -14,11 +14,11 @@ public class Entity {
         this.description = description;
     }
 
-    public String getUri() {
+    public int getUri() {
         return uri;
     }
 
-    public void setUri(String uri) {
+    public void setUri(int uri) {
         this.uri = uri;
     }
 

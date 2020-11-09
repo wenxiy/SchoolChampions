@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.example.schoolchampionship.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -31,7 +32,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initclick() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+                switch (itemId){
+                    case R.id.first_icon:
+                        break;
+                    case R.id.second_icon:
 
+                        break;
+                }
+                return true;
+            }
+        });
     }
 
     private void initview() {
@@ -42,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager()));
         tabLayout.setupWithViewPager(viewPager);
     }
+
     //将ViewPage的适配器写在内部
     public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
         public MyFragmentPagerAdapter(@NonNull FragmentManager fm) {

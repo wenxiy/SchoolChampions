@@ -3,6 +3,7 @@ package com.example.schoolchampionship.UI;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import com.example.schoolchampionship.Adapter.RecyclerViewAdapter;
 import com.example.schoolchampionship.Bean.Entity;
 import com.example.schoolchampionship.R;
+import com.example.schoolchampionship.Bean.Data_icon;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
 import java.util.ArrayList;
@@ -37,16 +39,17 @@ public class HistoryFragment extends Fragment {
 
     private void initdate() {
         //模拟数据，稍后用sqlite来实现
-        for (int i =1;i<=10;i++) {
+        for (int i = 0; i< Data_icon.icons.length; i++) {
         Entity entity = new Entity();
         entity.setDescription("朋友们好，我是混元形意太极掌门人马保国，昨天，有两个年轻人问我说马老师发生什么事了");
-        entity.setUri("https://github.com/xingshaocheng.png");
-        entity.setTitle("习近平总书记发表重要讲话");
+        entity.setUri(Data_icon.icons[i]);
+        entity.setTitle("党史知识");
         entity.setTime("2020.11.9");
             entities.add(entity);
         }
         adapter = new RecyclerViewAdapter(entities);
         linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        recyclerview.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));
         recyclerview.setLayoutManager(linearLayoutManager);
         recyclerview.setAdapter(adapter);
         adapter.notifyDataSetChanged();

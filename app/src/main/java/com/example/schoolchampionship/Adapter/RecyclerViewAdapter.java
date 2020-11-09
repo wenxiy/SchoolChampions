@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -49,7 +50,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public class InnerHolder extends RecyclerView.ViewHolder {
-        private SimpleDraweeView maver;
+        private ImageView maver;
         private TextView description;
         private TextView title;
         private int mposition;
@@ -63,8 +64,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public void setdata(Entity entity, int position) {
             mposition = position;
-            Uri uri = Uri.parse(entity.getUri());
-            maver.setImageURI(uri);
+            maver.setImageResource(entity.getUri());
+//            Uri uri = Uri.parse(entity.getUri());
+//            maver.setImageURI(uri);
             description.setText(entity.getDescription());
             title.setText(entity.getTitle());
         }
