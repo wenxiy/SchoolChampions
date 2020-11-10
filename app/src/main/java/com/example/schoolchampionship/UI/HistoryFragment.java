@@ -10,8 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import com.example.schoolchampionship.Adapter.RecyclerViewAdapter;
+import com.example.schoolchampionship.Bean.Data_de;
+import com.example.schoolchampionship.Bean.Data_title;
 import com.example.schoolchampionship.Bean.Entity;
 import com.example.schoolchampionship.R;
 import com.example.schoolchampionship.Bean.Data_icon;
@@ -25,6 +28,7 @@ public class HistoryFragment extends Fragment {
     private RecyclerView recyclerview;
     private LinearLayoutManager linearLayoutManager;
     private RecyclerViewAdapter adapter;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,9 +45,9 @@ public class HistoryFragment extends Fragment {
         //模拟数据，稍后用sqlite来实现
         for (int i = 0; i< Data_icon.icons.length; i++) {
         Entity entity = new Entity();
-        entity.setDescription("朋友们好，我是混元形意太极掌门人马保国，昨天，有两个年轻人问我说马老师发生什么事了");
+        entity.setDescription(Data_de.de[i]);
         entity.setUri(Data_icon.icons[i]);
-        entity.setTitle("党史知识");
+        entity.setTitle(Data_title.title[i]);
         entity.setTime("2020.11.9");
             entities.add(entity);
         }

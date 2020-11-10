@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.schoolchampionship.Bean.Entity;
 import com.example.schoolchampionship.R;
-import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
@@ -53,7 +52,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         private ImageView maver;
         private TextView description;
         private TextView title;
-        private int mposition;
 
         public InnerHolder(@NonNull View itemView) {
             super(itemView);
@@ -63,7 +61,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
 
         public void setdata(Entity entity, int position) {
-            mposition = position;
             maver.setImageResource(entity.getUri());
 //            Uri uri = Uri.parse(entity.getUri());
 //            maver.setImageURI(uri);

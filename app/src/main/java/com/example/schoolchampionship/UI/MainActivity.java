@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.schoolchampionship.R;
@@ -29,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initview();
         initclick();
+    }
+    //Menu的清单
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return super.onCreateOptionsMenu(menu);
     }
 
     private void initclick() {
@@ -51,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private void initview() {
         bottomNavigationView = findViewById(R.id.navigation_container);
         toolbar = findViewById(R.id.toolbar);
+        toolbar.setLogo(R.drawable.appicon);
         viewPager = findViewById(R.id.viewpager);
         tabLayout = findViewById(R.id.tablayout);
         viewPager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager()));
