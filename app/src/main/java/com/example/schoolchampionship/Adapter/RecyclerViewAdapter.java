@@ -17,6 +17,7 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.InnerHolder> {
     private List<Entity> entities;
+    private OnItemClickListener monItemClickListener;
     int expandPosition = -1;
 
     public RecyclerViewAdapter(List<Entity> entities) {
@@ -39,7 +40,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 //        holder.description.setVisibility(position == expandPosition ? View.VISIBLE : View.GONE);
 //        holder.title.setVisibility(position == expandPosition ? View.VISIBLE : View.GONE);
     }
-
+    public interface OnItemClickListener {
+        void OnItemClick(int position);
+    }
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.monItemClickListener = listener;
+    }
     @Override
     public int getItemCount() {
         if (entities!=null){
@@ -52,16 +58,28 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         private ImageView maver;
         private TextView description;
         private TextView title;
+        private int mPosition;
 
         public InnerHolder(@NonNull View itemView) {
             super(itemView);
             maver = itemView.findViewById(R.id.aver);
             description = itemView.findViewById(R.id.description);
             title = itemView.findViewById(R.id.title);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (monItemClickListener != null) {
+                        monItemClickListener.OnItemClick(mPosition);
+                        //点击事件：
+
+                    }
+                }
+            });
         }
 
         public void setdata(Entity entity, int position) {
             maver.setImageResource(entity.getUri());
+            this.mPosition = position;
 //            Uri uri = Uri.parse(entity.getUri());
 //            maver.setImageURI(uri);
             description.setText(entity.getDescription());

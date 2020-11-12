@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import com.example.schoolchampionship.Adapter.RecyclerViewAdapter;
 import com.example.schoolchampionship.Bean.Data_de;
@@ -43,17 +44,23 @@ public class HistoryFragment extends Fragment {
 
     private void initdate() {
         //模拟数据，稍后用sqlite来实现
-        for (int i = 0; i< Data_icon.icons.length; i++) {
-        Entity entity = new Entity();
-        entity.setDescription(Data_de.de[i]);
-        entity.setUri(Data_icon.icons[i]);
-        entity.setTitle(Data_title.title[i]);
-        entity.setTime("2020.11.9");
+        for (int i = 0; i < Data_icon.icons.length; i++) {
+            Entity entity = new Entity();
+            entity.setDescription(Data_de.de[i]);
+            entity.setUri(Data_icon.icons[i]);
+            entity.setTitle(Data_title.title[i]);
+            entity.setTime("2020.11.9");
             entities.add(entity);
         }
         adapter = new RecyclerViewAdapter(entities);
+        adapter.setOnItemClickListener(new RecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void OnItemClick(int position) {
+                Toast.makeText(getContext(), "点击第"+position+"个条目", Toast.LENGTH_SHORT).show();
+            }
+        });
         linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-        recyclerview.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));
+        recyclerview.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         recyclerview.setLayoutManager(linearLayoutManager);
         recyclerview.setAdapter(adapter);
         adapter.notifyDataSetChanged();

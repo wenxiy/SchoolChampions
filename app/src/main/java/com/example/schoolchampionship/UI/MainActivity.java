@@ -11,6 +11,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.schoolchampionship.R;
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;//搜索框等一系列的实现用这个
     private ViewPager viewPager; //滑动的ViewPage与TabLayout来实现
     private TabLayout tabLayout;
-    private String[] title = new String[]{"历史知识板块", "时政知识板块", "校园知识板块"};
+    private String[] title = new String[]{"四史精神", "青年快讯", "青春校园"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +33,12 @@ public class MainActivity extends AppCompatActivity {
         initclick();
     }
     //Menu的清单
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.toolbar_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
