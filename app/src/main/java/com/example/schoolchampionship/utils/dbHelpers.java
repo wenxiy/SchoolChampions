@@ -8,6 +8,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+/**
+ * 如果有机会重构代码，就将数据放到Room中，这样会好一点
+ *
+ */
 public class dbHelpers extends SQLiteOpenHelper {
     public dbHelpers(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);

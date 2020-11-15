@@ -6,9 +6,10 @@
     tools:context=".UI.SchoolFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/school_recyclerview"
         android:layout_height="match_parent"
-        android:text="校园知识板块" />
+        android:layout_width="match_parent" />
+
 
 </FrameLayout>

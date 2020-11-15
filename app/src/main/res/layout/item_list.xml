@@ -25,6 +25,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="15dp"
+        android:textColor="@color/black"
+        android:lines="1"
+        android:maxLines="1"
         android:textSize="20dp"
         app:layout_constraintStart_toEndOf="@+id/aver"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,6 +41,7 @@
         android:layout_marginTop="5dp"
         android:lines="2"
         android:maxLines="2"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/aver"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
@@ -46,6 +50,7 @@
         android:layout_height="15dp"
         android:gravity="right"
         android:text="2020-11-9"
+        android:textColor="@color/black"
         android:textSize="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description" />

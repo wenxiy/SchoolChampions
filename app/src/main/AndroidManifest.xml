@@ -9,14 +9,18 @@
         android:roundIcon="@drawable/appicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UI.PracticeActivity"></activity>
-        <activity android:name=".UI.MainActivity">
+        <activity android:name=".UI.OpenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".UI.DetailActivity" />
+        <activity android:name=".UI.PracticeActivity" />
+        <activity
+            android:name=".UI.MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
 </manifest>

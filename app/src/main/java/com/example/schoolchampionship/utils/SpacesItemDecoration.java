@@ -6,6 +6,9 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+/**
+ * 这里是为了解决关于标题字号的问题，以后重构代码再说吧...
+ */
 public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
     private int space;
 
